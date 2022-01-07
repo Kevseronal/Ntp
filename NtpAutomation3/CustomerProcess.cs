@@ -115,6 +115,7 @@ namespace NtpAutomation3
         }
 
         private void btnCustomerRemove_Click(object sender, EventArgs e)
+
         {
             int a = Convert.ToInt32(tbxCustomerId.Text);
             var b = db.Customers.Find(a);

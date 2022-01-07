@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtpAutomation", "NtpAutomat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "denemeeee", "denemeeee\denemeeee.csproj", "{C4883B6F-1C50-427C-BC87-CE0610D1DD77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtpAutomation3", "NtpAutomation3\NtpAutomation3.csproj", "{C7F3DC06-A118-4D97-B9E1-4CBC75DF6D8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtpFinalProjeOdevi", "NtpAutomation3\NtpFinalProjeOdevi.csproj", "{C7F3DC06-A118-4D97-B9E1-4CBC75DF6D8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
