@@ -57,7 +57,6 @@ namespace NtpAutomation3
             eventProcess.h = dgwEvents.CurrentRow.Cells[7].Value.ToString();
             eventProcess.i = dgwEvents.CurrentRow.Cells[8].Value.ToString();
             eventProcess.k = dgwEvents.CurrentRow.Cells[9].Value.ToString();
-           // eventProcess.l = dgwEvents.CurrentRow.Cells[10].Value.ToString(); 
             this.Hide();
             eventProcess.Show();
         }

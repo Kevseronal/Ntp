@@ -34,7 +34,6 @@
             this.lblCustomerAge = new System.Windows.Forms.Label();
             this.lblCustomerCinsiyet = new System.Windows.Forms.Label();
             this.lblCustomerTc = new System.Windows.Forms.Label();
-            this.lblCustomerStudentNumber = new System.Windows.Forms.Label();
             this.tbxCustomerName = new System.Windows.Forms.TextBox();
             this.tbxCustomerLastName = new System.Windows.Forms.TextBox();
             this.tbxCustomerAge = new System.Windows.Forms.TextBox();
@@ -56,6 +55,8 @@
             this.lblCustomerMail = new System.Windows.Forms.Label();
             this.tbxEventName = new System.Windows.Forms.TextBox();
             this.lblCustomerPhoneNumber = new System.Windows.Forms.Label();
+            this.tbxCode = new System.Windows.Forms.TextBox();
+            this.lblCustomerStudentNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,16 +109,6 @@
             this.lblCustomerTc.Size = new System.Drawing.Size(43, 24);
             this.lblCustomerTc.TabIndex = 4;
             this.lblCustomerTc.Text = "Tc : ";
-            // 
-            // lblCustomerStudentNumber
-            // 
-            this.lblCustomerStudentNumber.AutoSize = true;
-            this.lblCustomerStudentNumber.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCustomerStudentNumber.Location = new System.Drawing.Point(51, 264);
-            this.lblCustomerStudentNumber.Name = "lblCustomerStudentNumber";
-            this.lblCustomerStudentNumber.Size = new System.Drawing.Size(179, 24);
-            this.lblCustomerStudentNumber.TabIndex = 5;
-            this.lblCustomerStudentNumber.Text = "Öğrenci Numarası : ";
             // 
             // tbxCustomerName
             // 
@@ -236,10 +227,10 @@
             // 
             // tbxEventCapacity
             // 
-            this.tbxEventCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.8F);
+            this.tbxEventCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.8F);
             this.tbxEventCapacity.Location = new System.Drawing.Point(173, 461);
             this.tbxEventCapacity.Name = "tbxEventCapacity";
-            this.tbxEventCapacity.Size = new System.Drawing.Size(44, 18);
+            this.tbxEventCapacity.Size = new System.Drawing.Size(44, 15);
             this.tbxEventCapacity.TabIndex = 24;
             // 
             // lblCustomerDepartment
@@ -254,10 +245,10 @@
             // 
             // tbxEventInformation
             // 
-            this.tbxEventInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.8F);
+            this.tbxEventInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.8F);
             this.tbxEventInformation.Location = new System.Drawing.Point(191, 411);
             this.tbxEventInformation.Name = "tbxEventInformation";
-            this.tbxEventInformation.Size = new System.Drawing.Size(10, 18);
+            this.tbxEventInformation.Size = new System.Drawing.Size(10, 15);
             this.tbxEventInformation.TabIndex = 26;
             // 
             // lblCustomerFaculty
@@ -282,7 +273,7 @@
             // 
             this.lblCustomerMail.AutoSize = true;
             this.lblCustomerMail.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCustomerMail.Location = new System.Drawing.Point(169, 358);
+            this.lblCustomerMail.Location = new System.Drawing.Point(169, 360);
             this.lblCustomerMail.Name = "lblCustomerMail";
             this.lblCustomerMail.Size = new System.Drawing.Size(61, 24);
             this.lblCustomerMail.TabIndex = 29;
@@ -290,10 +281,10 @@
             // 
             // tbxEventName
             // 
-            this.tbxEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.8F);
+            this.tbxEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.8F);
             this.tbxEventName.Location = new System.Drawing.Point(191, 317);
             this.tbxEventName.Name = "tbxEventName";
-            this.tbxEventName.Size = new System.Drawing.Size(10, 18);
+            this.tbxEventName.Size = new System.Drawing.Size(10, 15);
             this.tbxEventName.TabIndex = 31;
             // 
             // lblCustomerPhoneNumber
@@ -306,12 +297,32 @@
             this.lblCustomerPhoneNumber.TabIndex = 32;
             this.lblCustomerPhoneNumber.Text = "Telefon Numarası : ";
             // 
+            // tbxCode
+            // 
+            this.tbxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.8F);
+            this.tbxCode.Location = new System.Drawing.Point(130, 269);
+            this.tbxCode.Name = "tbxCode";
+            this.tbxCode.Size = new System.Drawing.Size(100, 15);
+            this.tbxCode.TabIndex = 33;
+            // 
+            // lblCustomerStudentNumber
+            // 
+            this.lblCustomerStudentNumber.AutoSize = true;
+            this.lblCustomerStudentNumber.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCustomerStudentNumber.Location = new System.Drawing.Point(55, 264);
+            this.lblCustomerStudentNumber.Name = "lblCustomerStudentNumber";
+            this.lblCustomerStudentNumber.Size = new System.Drawing.Size(179, 24);
+            this.lblCustomerStudentNumber.TabIndex = 34;
+            this.lblCustomerStudentNumber.Text = "Öğrenci Numarası : ";
+            // 
             // SignUpCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(696, 581);
+            this.Controls.Add(this.lblCustomerStudentNumber);
+            this.Controls.Add(this.tbxCode);
             this.Controls.Add(this.lblCustomerPhoneNumber);
             this.Controls.Add(this.tbxEventName);
             this.Controls.Add(this.lblCustomerMail);
@@ -333,7 +344,6 @@
             this.Controls.Add(this.tbxCustomerAge);
             this.Controls.Add(this.tbxCustomerLastName);
             this.Controls.Add(this.tbxCustomerName);
-            this.Controls.Add(this.lblCustomerStudentNumber);
             this.Controls.Add(this.lblCustomerTc);
             this.Controls.Add(this.lblCustomerCinsiyet);
             this.Controls.Add(this.lblCustomerAge);
@@ -357,7 +367,6 @@
         private System.Windows.Forms.Label lblCustomerAge;
         private System.Windows.Forms.Label lblCustomerCinsiyet;
         private System.Windows.Forms.Label lblCustomerTc;
-        private System.Windows.Forms.Label lblCustomerStudentNumber;
         private System.Windows.Forms.TextBox tbxCustomerName;
         private System.Windows.Forms.TextBox tbxCustomerLastName;
         private System.Windows.Forms.TextBox tbxCustomerAge;
@@ -379,5 +388,7 @@
         private System.Windows.Forms.Label lblCustomerMail;
         private System.Windows.Forms.TextBox tbxEventName;
         private System.Windows.Forms.Label lblCustomerPhoneNumber;
+        private System.Windows.Forms.TextBox tbxCode;
+        private System.Windows.Forms.Label lblCustomerStudentNumber;
     }
 }

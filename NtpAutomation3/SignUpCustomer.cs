@@ -51,8 +51,10 @@ namespace NtpAutomation3
             tbxEventDate.Text = t;
             tbxEventName.Text = w;
 
-
-            //pbxQr.ImageLocation = w;
+            int x1 = Convert.ToInt32(tbxEventId.Text);
+            var y1 = db.Events.Find(x1);
+            tbxCode.Text = Convert.ToString(y1.EventCode);
+           
         }
 
         //public void GetPublicvoidQR(string infoReserva)
@@ -79,15 +81,28 @@ namespace NtpAutomation3
         //    NetworkCred.UserName = 
         //}
 
-         public int a;
+         public string a;
         private void btnCustomerSignUp_Click(object sender, EventArgs e)
         {
-            
-
-            Customers customers = new Customers();           
+            Customers customers = new Customers();
             Activity activity = new Activity();
             Events events = new Events();
 
+            int x = Convert.ToInt32(tbxEventId.Text);
+            var y = db.Events.Find(x);
+            //int x = Convert.ToInt32(tbxEventId.Text);
+            //var y = db.Customers.Where(p => p.CustomerEvent == x.ToString()).ToList();
+            //tbxCapacityControl.Text = Convert.ToString(y.Count());
+
+
+            if (y.CapacityControl > Convert.ToInt32(tbxEventCapacity.Text))
+            {
+                MessageBox.Show("Kapasite Dolu!");
+                this.Close();
+                activity.Show();
+            }
+            else
+            {
                 customers.CustomerName = tbxCustomerName.Text;
                 customers.CustomerLastName = tbxCustomerLastName.Text;
                 customers.CustomerAge = tbxCustomerAge.Text;
@@ -101,36 +116,41 @@ namespace NtpAutomation3
                 customers.CustomerEvent = tbxEventId.Text;
 
                 db.Customers.Add(customers);
+
+                y.CapacityControl += 1;
+
+
                 db.SaveChanges();
-                a += 1;
                 MessageBox.Show("Müşteri Eklendi!");
+
+
+
+                //pbxQr.ImageLocation = w;
+
+                MailMessage sms = new MailMessage();
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Credentials = new System.Net.NetworkCredential("egeuniversitesii1@gmail.com", "EgeUniversitesi44");
+                smtpClient.Port = 587;
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.EnableSsl = true;
+                sms.To.Add(tbxCustomerMail.Text);
+                sms.From = new MailAddress("egeuniversitesii1@gmail.com");
+                sms.Subject = events.EventName + " etkinliğine kayıt oldunuz!";
+                sms.Body = tbxEventInformation.Text + "\nTarih : " + tbxEventDate.Text + "\nEtkinlik Giriş Kodu : " + tbxCode.Text;
+
+                //sms.Attachments.Add(new Attachment(pbxQr));
+
+
+                smtpClient.Send(sms);
+
+
+                this.Hide();
+                activity.Show();
+            }
+
             
-            
 
-           //pbxQr.ImageLocation = w;
-            
-
-
-
-            MailMessage sms = new MailMessage();
-            SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Credentials = new System.Net.NetworkCredential("egeuniversitesii1@gmail.com", "EgeUniversitesi44");
-            smtpClient.Port = 587;
-            smtpClient.Host = "smtp.gmail.com";
-            smtpClient.EnableSsl = true;
-            sms.To.Add(tbxCustomerMail.Text);
-            sms.From = new MailAddress("egeuniversitesii1@gmail.com");
-            sms.Subject = events.EventName + " etkinliğine kayıt oldunuz!";
-            sms.Body = tbxEventInformation.Text + "                                     Tarih : " + tbxEventDate.Text;
-
-            //sms.Attachments.Add(new Attachment(pbxQr));
-            
-
-            smtpClient.Send(sms);
-            
-
-           // this.Hide();
-           // activity.Show();
+               
 
             //for (int toplam = 0; toplam < Convert.ToInt32(tbxEventCapacity.Text); toplam++)
             //{

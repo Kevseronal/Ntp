@@ -37,7 +37,6 @@
             this.lblEventUnitPrice = new System.Windows.Forms.Label();
             this.lblEventImage = new System.Windows.Forms.Label();
             this.lblEventInformation = new System.Windows.Forms.Label();
-            this.lblEventDepartment = new System.Windows.Forms.Label();
             this.tbxEventName = new System.Windows.Forms.TextBox();
             this.tbxEventDate = new System.Windows.Forms.TextBox();
             this.tbxEventFree = new System.Windows.Forms.TextBox();
@@ -53,12 +52,11 @@
             this.btnEventSignUp = new System.Windows.Forms.Button();
             this.dgwGizli = new System.Windows.Forms.DataGridView();
             this.pbxEventImage = new System.Windows.Forms.PictureBox();
-            this.tbxQr = new System.Windows.Forms.TextBox();
-            this.pbxQr = new System.Windows.Forms.PictureBox();
+            this.tbxCode = new System.Windows.Forms.TextBox();
+            this.lblEventDepartment = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwGizli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEventImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxQr)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEventName
@@ -95,11 +93,11 @@
             // 
             this.lblEventFaculty.AutoSize = true;
             this.lblEventFaculty.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEventFaculty.Location = new System.Drawing.Point(136, 296);
+            this.lblEventFaculty.Location = new System.Drawing.Point(122, 296);
             this.lblEventFaculty.Name = "lblEventFaculty";
-            this.lblEventFaculty.Size = new System.Drawing.Size(74, 24);
+            this.lblEventFaculty.Size = new System.Drawing.Size(88, 24);
             this.lblEventFaculty.TabIndex = 5;
-            this.lblEventFaculty.Text = "Fakülte";
+            this.lblEventFaculty.Text = "Fakülte : ";
             // 
             // lblEventCapacity
             // 
@@ -140,16 +138,6 @@
             this.lblEventInformation.Size = new System.Drawing.Size(62, 24);
             this.lblEventInformation.TabIndex = 7;
             this.lblEventInformation.Text = "Bilgi : ";
-            // 
-            // lblEventDepartment
-            // 
-            this.lblEventDepartment.AutoSize = true;
-            this.lblEventDepartment.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEventDepartment.Location = new System.Drawing.Point(130, 350);
-            this.lblEventDepartment.Name = "lblEventDepartment";
-            this.lblEventDepartment.Size = new System.Drawing.Size(80, 24);
-            this.lblEventDepartment.TabIndex = 6;
-            this.lblEventDepartment.Text = "Bölüm : ";
             // 
             // tbxEventName
             // 
@@ -209,8 +197,10 @@
             // 
             // tbxEventInformation
             // 
+            this.tbxEventInformation.AcceptsReturn = true;
             this.tbxEventInformation.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbxEventInformation.Location = new System.Drawing.Point(244, 401);
+            this.tbxEventInformation.Multiline = true;
             this.tbxEventInformation.Name = "tbxEventInformation";
             this.tbxEventInformation.Size = new System.Drawing.Size(286, 32);
             this.tbxEventInformation.TabIndex = 16;
@@ -289,21 +279,23 @@
             this.pbxEventImage.TabIndex = 23;
             this.pbxEventImage.TabStop = false;
             // 
-            // tbxQr
+            // tbxCode
             // 
-            this.tbxQr.Location = new System.Drawing.Point(50, 357);
-            this.tbxQr.Name = "tbxQr";
-            this.tbxQr.Size = new System.Drawing.Size(60, 22);
-            this.tbxQr.TabIndex = 24;
+            this.tbxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.8F);
+            this.tbxCode.Location = new System.Drawing.Point(137, 355);
+            this.tbxCode.Name = "tbxCode";
+            this.tbxCode.Size = new System.Drawing.Size(50, 15);
+            this.tbxCode.TabIndex = 24;
             // 
-            // pbxQr
+            // lblEventDepartment
             // 
-            this.pbxQr.Location = new System.Drawing.Point(61, 386);
-            this.pbxQr.Name = "pbxQr";
-            this.pbxQr.Size = new System.Drawing.Size(49, 36);
-            this.pbxQr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxQr.TabIndex = 25;
-            this.pbxQr.TabStop = false;
+            this.lblEventDepartment.AutoSize = true;
+            this.lblEventDepartment.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEventDepartment.Location = new System.Drawing.Point(130, 350);
+            this.lblEventDepartment.Name = "lblEventDepartment";
+            this.lblEventDepartment.Size = new System.Drawing.Size(80, 24);
+            this.lblEventDepartment.TabIndex = 25;
+            this.lblEventDepartment.Text = "Bölüm : ";
             // 
             // SignUpEvent
             // 
@@ -311,8 +303,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1096, 566);
-            this.Controls.Add(this.pbxQr);
-            this.Controls.Add(this.tbxQr);
+            this.Controls.Add(this.lblEventDepartment);
+            this.Controls.Add(this.tbxCode);
             this.Controls.Add(this.pbxEventImage);
             this.Controls.Add(this.dgwGizli);
             this.Controls.Add(this.btnEventSignUp);
@@ -329,7 +321,6 @@
             this.Controls.Add(this.tbxEventName);
             this.Controls.Add(this.lblEventImage);
             this.Controls.Add(this.lblEventInformation);
-            this.Controls.Add(this.lblEventDepartment);
             this.Controls.Add(this.lblEventFaculty);
             this.Controls.Add(this.lblEventCapacity);
             this.Controls.Add(this.lblEventUnitPrice);
@@ -344,7 +335,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwGizli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEventImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxQr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +350,6 @@
         private System.Windows.Forms.Label lblEventUnitPrice;
         private System.Windows.Forms.Label lblEventImage;
         private System.Windows.Forms.Label lblEventInformation;
-        private System.Windows.Forms.Label lblEventDepartment;
         private System.Windows.Forms.TextBox tbxEventName;
         private System.Windows.Forms.TextBox tbxEventDate;
         private System.Windows.Forms.TextBox tbxEventFree;
@@ -376,7 +365,7 @@
         private System.Windows.Forms.Button btnEventSignUp;
         private System.Windows.Forms.DataGridView dgwGizli;
         private System.Windows.Forms.PictureBox pbxEventImage;
-        private System.Windows.Forms.TextBox tbxQr;
-        private System.Windows.Forms.PictureBox pbxQr;
+        private System.Windows.Forms.TextBox tbxCode;
+        private System.Windows.Forms.Label lblEventDepartment;
     }
 }

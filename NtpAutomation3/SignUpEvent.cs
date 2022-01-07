@@ -79,6 +79,11 @@ namespace NtpAutomation3
             Events events = new Events();
             Process process = new Process();
             Customers customers = new Customers();
+            Random random = new Random();
+            int min = 000000;
+            int max = 999999;
+            string code = random.Next(min, max).ToString();
+            tbxCode.Text = code;
             events.EventName = tbxEventName.Text;
             events.Date = tbxEventDate.Text;
             events.Free = tbxEventFree.Text;
@@ -89,6 +94,10 @@ namespace NtpAutomation3
             events.Information = tbxEventInformation.Text;
             events.Image = tbxEventImage.Text;
             pbxEventImage.ImageLocation = openFileDialogImage.FileName;
+
+
+
+            events.EventCode = tbxCode.Text;
 
             db.Events.Add(events);
             db.SaveChanges();
@@ -117,6 +126,7 @@ namespace NtpAutomation3
 
         private void SignUpEvent_Load(object sender, EventArgs e)
         {
+            
             var Events = (from x in db.Events
                           select new
                           {
@@ -134,7 +144,7 @@ namespace NtpAutomation3
                               x.EventCode
                           }).ToList();
             dgwGizli.DataSource = Events;
-            pbxQr.ImageLocation = tbxQr.Text;
+            
         }
     }
 }

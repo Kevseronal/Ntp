@@ -215,6 +215,7 @@
             // 
             this.tbxEventInformation.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbxEventInformation.Location = new System.Drawing.Point(236, 580);
+            this.tbxEventInformation.Multiline = true;
             this.tbxEventInformation.Name = "tbxEventInformation";
             this.tbxEventInformation.Size = new System.Drawing.Size(286, 32);
             this.tbxEventInformation.TabIndex = 16;
@@ -320,6 +321,7 @@
             // 
             // tbxBigEventInformation
             // 
+            this.tbxBigEventInformation.AcceptsReturn = true;
             this.tbxBigEventInformation.BackColor = System.Drawing.Color.Bisque;
             this.tbxBigEventInformation.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbxBigEventInformation.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

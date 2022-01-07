@@ -69,23 +69,25 @@ namespace NtpAutomation3
 
         private void btnSignUpCustomer_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(tbxCapacityControl.Text) >= Convert.ToInt32(tbxEventCapacity.Text))
-            {
-                MessageBox.Show("Kapasite Dolu!");
+            //if (Convert.ToInt32(tbxCapacityControl.Text) >= Convert.ToInt32(tbxEventCapacity.Text))
+            //{
+            //    MessageBox.Show("Kapasite Dolu!");
 
-            } // Bu if hata veriyor..
-            else
-            {
-                SignUpCustomer signUpCustomer = new SignUpCustomer();
-                signUpCustomer.x = Convert.ToInt32(tbxEventId.Text);
-                signUpCustomer.y = Convert.ToInt32(tbxEventCapacity.Text);
-                signUpCustomer.z = tbxEventInformation.Text;
-                signUpCustomer.t = tbxEventDate.Text;
-                signUpCustomer.w = tbxEventName.Text;
-                signUpCustomer.a = Convert.ToInt32(tbxCapacityControl.Text);
-                signUpCustomer.Show();
-                this.Hide();
-            }     
+            //} // Bu if hata veriyor..
+            //else
+            //{
+            //}
+
+            SignUpCustomer signUpCustomer = new SignUpCustomer();
+            signUpCustomer.x = Convert.ToInt32(tbxEventId.Text);
+            signUpCustomer.y = Convert.ToInt32(tbxEventCapacity.Text);
+            signUpCustomer.z = tbxEventInformation.Text;
+            signUpCustomer.t = tbxEventDate.Text;
+            signUpCustomer.w = tbxEventName.Text;
+           
+            signUpCustomer.a = tbxCapacityControl.Text;
+            signUpCustomer.Show();
+            this.Hide();
         }
 
         private void btnImageAdd_Click(object sender, EventArgs e)
@@ -98,12 +100,11 @@ namespace NtpAutomation3
         private void EventProcess_Load(object sender, EventArgs e)
         {
             Events events = new Events();
-           
+            Customers customers = new Customers();
             tbxEventId.Text = a;
             tbxEventName.Text = b;
             tbxEventFree.Text = c;
             tbxEventUnitPrice.Text = d;
-            tbxEventCapacity.Text = e.ToString();
             tbxEventFaculty.Text = f;
             tbxEventDepartment.Text = g;
             tbxEventDate.Text = h;
@@ -111,12 +112,24 @@ namespace NtpAutomation3
             tbxEventImage.Text = k;
             pbxEventImage.ImageLocation = k;
 
-            int x = Convert.ToInt32(tbxEventId.Text);
-            var y = db.Events.Find(x);
-            tbxCapacityControl.Text = Convert.ToString(y.CapacityControl);
+            int x1 = Convert.ToInt32(tbxEventId.Text);
+            var y1 = db.Events.Find(x1);
+            tbxEventCapacity.Text = Convert.ToString(y1.Capacity);
 
-          
-           
+           /* int x = Convert.ToInt32(tbxEventId.Text);
+            var y = db.Events.Find(x);
+            tbxCapacityControl.Text = Convert.ToString(y.CapacityControl);*/
+
+            int x = Convert.ToInt32(tbxEventId.Text);
+            var y = db.Customers.Where(p => p.CustomerEvent == x.ToString()).ToList();
+            tbxCapacityControl.Text = Convert.ToString(y.Count());
+
+            /*if (y.CapacityControl == null)
+            {
+                y.CapacityControl = 0;
+                tbxCapacityControl.Text = "0";
+            }*/
+
 
             tbxBigEventInformation.Text = tbxEventInformation.Text;
         }

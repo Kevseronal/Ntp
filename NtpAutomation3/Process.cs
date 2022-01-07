@@ -17,10 +17,6 @@ namespace NtpAutomation3
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -30,60 +26,65 @@ namespace NtpAutomation3
         private void Process_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-        }
+        }     
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.instagram.com/universiteege/");
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://twitter.com/universiteege");
         }
 
-        private void btnEvents_MouseHover(object sender, EventArgs e)
+        private void btnEvents_Click_1(object sender, EventArgs e)
         {
-            btnEvents.BackColor = Color.OrangeRed;
+            Activity activity = new Activity();
+            activity.Show();
+            this.Hide();
         }
 
-        private void btnEvents_MouseLeave(object sender, EventArgs e)
-        {
-            btnEvents.BackColor = Color.Tomato;
-        }
-
-        private void btnSignUpProcess_MouseHover(object sender, EventArgs e)
-        {
-            btnSignUpProcess.BackColor = Color.OrangeRed;
-        }
-
-        private void btnSignUpProcess_MouseLeave(object sender, EventArgs e)
-        {
-            btnSignUpProcess.BackColor = Color.Tomato;
-        }
-
-        private void btnExit_MouseHover(object sender, EventArgs e)
-        {
-            btnExit.BackColor = Color.OrangeRed;
-        }
-
-        private void btnExit_MouseLeave(object sender, EventArgs e)
-        {
-            btnExit.BackColor = Color.Tomato;
-        }
-
-        private void btnSignUpProcess_Click(object sender, EventArgs e)
+        private void btnSignUpProcess_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             SignUpEvent signUpEvent = new SignUpEvent();
             signUpEvent.Show();
         }
 
-        private void btnEvents_Click(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Activity activity = new Activity();
-            activity.Show();
-            this.Hide();
+            System.Diagnostics.Process.Start("https://www.instagram.com/universiteege/");
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnEvents_MouseHover_1(object sender, EventArgs e)
+        {
+            btnEvents.BackColor = Color.PaleVioletRed;
+        }
+
+        private void btnEvents_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnEvents.BackColor = Color.MediumVioletRed;
+        }
+
+        private void btnSignUpProcess_MouseHover_1(object sender, EventArgs e)
+        {
+            btnSignUpProcess.BackColor = Color.PaleVioletRed;
+        }
+
+        private void btnSignUpProcess_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnSignUpProcess.BackColor = Color.MediumVioletRed;
+        }
+
+        private void btnExit_MouseHover_1(object sender, EventArgs e)
+        {
+            btnExit.BackColor = Color.PaleVioletRed;
+        }
+
+        private void btnExit_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnExit.BackColor = Color.MediumVioletRed;
         }
     }
 }
