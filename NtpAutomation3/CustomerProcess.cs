@@ -112,6 +112,7 @@ namespace NtpAutomation3
             tbxCustomerMail.Text = dgwSignUpCustomerList.CurrentRow.Cells[6].Value.ToString();
             tbxCustomerFaculty.Text = dgwSignUpCustomerList.CurrentRow.Cells[7].Value.ToString();
             tbxCustomerDepartment.Text = dgwSignUpCustomerList.CurrentRow.Cells[8].Value.ToString();
+
         }
 
         private void btnCustomerRemove_Click(object sender, EventArgs e)
