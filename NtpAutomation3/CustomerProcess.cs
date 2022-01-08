@@ -41,60 +41,13 @@ namespace NtpAutomation3
             tbxEventId.Text = Convert.ToString(y);
             Customers customers = new Customers();
 
-            //if (tbxEventId.Text == customers.CustomerEvent)
-            //{
-            //    var Customers = 
-            //}
 
             Events events = new Events();
 
             var listelenecekUrunler = db.Customers.Where(p => p.CustomerEvent == tbxEventId.Text).ToList();
             dgwSignUpCustomerList.DataSource = listelenecekUrunler;
 
-
-            //var Customers = (from x in db.Customers
-            //                 select new
-            //                 {
-            //                     x.CustomerId,
-            //                     x.CustomerName,
-            //                     x.CustomerLastName,
-            //                     x.CustomerTc,
-            //                     x.CustomerStudentNumber,
-            //                     x.CustomerAge,
-            //                     x.CustomerMail,
-            //                     x.CustomerFaculty,
-            //                     x.CustomerDepartment,
-            //                     x.CustomerPhoneNumber,
-            //                     x.CustomerCinsiyet,
-            //                     x.CustomerEvent
-            //                 }).ToList();
-            //dgwSignUpCustomerList.DataSource = Customers;
-
-
-            //foreach (var cus in listelenecekUrunler)
-            //{
-            //    customers
-            //}
-
-
-
-            //var Customers = (from x in db.Customers
-            //                 select new
-            //                 {
-            //                     x.CustomerId,
-            //                     x.CustomerName,
-            //                     x.CustomerLastName,
-            //                     x.CustomerTc,
-            //                     x.CustomerStudentNumber,
-            //                     x.CustomerAge,
-            //                     x.CustomerMail,
-            //                     x.CustomerFaculty,
-            //                     x.CustomerDepartment,
-            //                     x.CustomerPhoneNumber,
-            //                     x.CustomerCinsiyet,
-            //                     x.CustomerEvent
-            //                 }).ToList();
-            //dgwSignUpCustomerList.DataSource = Customers;
+            
         }
 
         private void dgwSignUpCustomerList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -135,7 +88,6 @@ namespace NtpAutomation3
 
             Events events = new Events();
 
-            //y.CustomerId = Convert.ToInt32(tbxCustomerId.Text);
             y.CustomerName = tbxCustomerName.Text;
             y.CustomerLastName = tbxCustomerLastName.Text;
             y.CustomerAge = tbxCustomerAge.Text;

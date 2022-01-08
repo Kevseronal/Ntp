@@ -70,40 +70,6 @@ namespace NtpAutomation3
 
             EventLoad();
 
-
-
-
-            //var free = (from x in db.Events
-            //            select new
-            //            {
-            //                x.EventId,
-            //                x.Free
-            //            }).Distinct().ToList();
-            //cbxFree.DataSource = free;
-            //cbxFree.ValueMember = "EventId";
-            //cbxFree.DisplayMember = "Free";
-
-
-
-            //var faculty = (from x in db.Events
-            //               select new
-            //               {
-            //                   x.EventId,
-            //                   x.Faculty
-            //               }).ToList();
-            //cbxFaculty.ValueMember = "EventId";
-            //cbxFaculty.DisplayMember = "Faculty";
-            //cbxFaculty.DataSource = faculty;
-
-            //var department = (from x in db.Events
-            //                  select new
-            //                  {
-            //                      x.EventId,
-            //                      x.Department
-            //                  }).ToList();
-            //cbxDepartment.ValueMember = "EventId";
-            //cbxDepartment.DisplayMember = "Department";
-            //cbxDepartment.DataSource = department;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -120,27 +86,7 @@ namespace NtpAutomation3
             cbxDepartment.Text = "";
             EventLoad();
         }
-
-        //private void dgwEvents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-
-
-        //    EventProcess eventProcess = new EventProcess();
-        //    eventProcess.Show();
-        //    this.Hide();
-        //    eventProcess.a = dgwEvents.CurrentRow.Cells[1].Value.ToString();
-        //    eventProcess.b = dgwEvents.CurrentRow.Cells[2].Value.ToString();
-        //    eventProcess.c = dgwEvents.CurrentRow.Cells[3].Value.ToString();
-        //    eventProcess.d = dgwEvents.CurrentRow.Cells[4].Value.ToString();
-        //    eventProcess.e = dgwEvents.CurrentRow.Cells[5].Value.ToString();
-        //    eventProcess.f = dgwEvents.CurrentRow.Cells[6].Value.ToString();
-        //    eventProcess.g = dgwEvents.CurrentRow.Cells[7].Value.ToString();
-        //    eventProcess.h = dgwEvents.CurrentRow.Cells[8].Value.ToString();
-        //    eventProcess.i = dgwEvents.CurrentRow.Cells[9].Value.ToString();
-
-        //    //tbxEventImage.Text = dgwEvents.CurrentRow.Cells[9].Value.ToString();
-
-        //}
+    
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
@@ -165,24 +111,7 @@ namespace NtpAutomation3
         {
             _connection.Open();
 
-            //string a = "Select * from Events where Free = @_free and Faculty = @_faculty";
-            //SqlParameter prm1 = new SqlParameter("@_free", cbxFree.Text);
-            //SqlParameter prm2 = new SqlParameter("@_faculty", cbxFaculty.Text);
-
-            //SqlCommand command = new SqlCommand(a, _connection);
-            //command.Parameters.Add(prm1);
-            //command.Parameters.Add(prm2);
-
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter da = new SqlDataAdapter(command);
-            //DataSet ds = new DataSet();
-            //da.Fill(dt);
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    dgwEvents.DataSource = ds.Tables[0];
-            //}
-            //offfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+           
             SqlCommand command = new SqlCommand("Select * from Events where Free like '%" + cbxFree.Text + "%'", _connection);
             SqlCommand command2 = new SqlCommand("Select * from Events where Faculty like '%" + cbxFaculty.Text + "%'", _connection);
             SqlCommand command3 = new SqlCommand("Select * from Events where Department like '%" + cbxDepartment.Text + "%'", _connection);
@@ -195,21 +124,7 @@ namespace NtpAutomation3
             dgwEvents.DataSource = ds.Tables[0];
             _connection.Close();
 
-            //_connection.Open();
-            //SqlCommand command = new SqlCommand("Select * from Events where Free like '%" + cbxFree.ValueMember.ToString() + "%'", _connection);
-            //SqlCommand command2 = new SqlCommand("Select * from Events where Faculty like '%" + cbxFaculty.ValueMember + "%'", _connection);
-            //SqlCommand command3 = new SqlCommand("Select * from Events where Department like '%" + cbxDepartment.ValueMember + "%'", _connection);
 
-            //SqlDataAdapter da = new SqlDataAdapter(command);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-            //dgwEvents.DataSource = ds.Tables[0];
-            //_connection.Close();
-
-            //string a = cbxFree.ValueMember;
-            //var b = db.Events.Find(a);
-            //db.Events.Remove(b);
-            //db.SaveChanges();
         }
 
         private void cbxFaculty_SelectedIndexChanged(object sender, EventArgs e)
