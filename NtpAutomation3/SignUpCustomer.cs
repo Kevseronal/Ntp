@@ -90,10 +90,7 @@ namespace NtpAutomation3
 
             int x = Convert.ToInt32(tbxEventId.Text);
             var y = db.Events.Find(x);
-            //int x = Convert.ToInt32(tbxEventId.Text);
-            //var y = db.Customers.Where(p => p.CustomerEvent == x.ToString()).ToList();
-            //tbxCapacityControl.Text = Convert.ToString(y.Count());
-
+            
 
             if (y.CapacityControl > Convert.ToInt32(tbxEventCapacity.Text))
             {
@@ -125,7 +122,6 @@ namespace NtpAutomation3
 
 
 
-                //pbxQr.ImageLocation = w;
 
                 MailMessage sms = new MailMessage();
                 SmtpClient smtpClient = new SmtpClient();
@@ -138,7 +134,7 @@ namespace NtpAutomation3
                 sms.Subject = events.EventName + " etkinliğine kayıt oldunuz!";
                 sms.Body = tbxEventInformation.Text + "\nTarih : " + tbxEventDate.Text + "\nEtkinlik Giriş Kodu : " + tbxCode.Text;
 
-                //sms.Attachments.Add(new Attachment(pbxQr));
+                
 
 
                 smtpClient.Send(sms);
@@ -146,51 +142,8 @@ namespace NtpAutomation3
 
                 this.Hide();
                 activity.Show();
-            }
-
+            }       
             
-
-               
-
-            //for (int toplam = 0; toplam < Convert.ToInt32(tbxEventCapacity.Text); toplam++)
-            //{
-            //    customers.CustomerName = tbxCustomerName.Text;
-            //    customers.CustomerLastName = tbxCustomerLastName.Text;
-            //    customers.CustomerAge = tbxCustomerAge.Text;
-            //    customers.CustomerCinsiyet = tbxCustomerCinsiyet.Text;
-            //    customers.CustomerTc = tbxCustomerTc.Text;
-            //    customers.CustomerStudentNumber = tbxCustomerStudentNumber.Text;
-            //    customers.CustomerPhoneNumber = tbxCustomerPhoneNumber.Text;
-            //    customers.CustomerMail = tbxCustomerMail.Text;
-            //    customers.CustomerFaculty = tbxCustomerFaculty.Text;
-            //    customers.CustomerDepartment = tbxCustomerDepartment.Text;
-            //    customers.CustomerEvent = tbxEventId.Text;
-
-            //    db.Customers.Add(customers);
-            //    db.SaveChanges();
-            //    MessageBox.Show("Müşteri Eklendi!");
-
-            //    MailMessage sms = new MailMessage();
-            //    SmtpClient smtpClient = new SmtpClient();
-            //    smtpClient.Credentials = new System.Net.NetworkCredential("egeuniversitesii1@gmail.com", "EgeUniversitesi44");
-            //    smtpClient.Port = 587;
-            //    smtpClient.Host = "smtp.gmail.com";
-            //    smtpClient.EnableSsl = true;
-            //    sms.To.Add(customers.CustomerMail);
-            //    sms.From = new MailAddress("egeuniversitesii1@gmail.com");
-            //    sms.Subject = events.EventName + " etkinliğine kayıt oldunuz!";
-            //    sms.Body = tbxEventInformation.Text + "                                     Tarih : " + tbxEventDate.Text;
-            //    smtpClient.Send(sms);
-
-            //    this.Hide();
-            //    activity.Show();
-
-                
-            //}
-            //MessageBox.Show("Kapasite Dolu!");
-            //this.Hide();
-            //activity.Show();
-                   
             
         }
 

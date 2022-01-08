@@ -69,14 +69,7 @@ namespace NtpAutomation3
 
         private void btnSignUpCustomer_Click(object sender, EventArgs e)
         {
-            //if (Convert.ToInt32(tbxCapacityControl.Text) >= Convert.ToInt32(tbxEventCapacity.Text))
-            //{
-            //    MessageBox.Show("Kapasite Dolu!");
-
-            //} // Bu if hata veriyor..
-            //else
-            //{
-            //}
+           
 
             SignUpCustomer signUpCustomer = new SignUpCustomer();
             signUpCustomer.x = Convert.ToInt32(tbxEventId.Text);
@@ -116,19 +109,12 @@ namespace NtpAutomation3
             var y1 = db.Events.Find(x1);
             tbxEventCapacity.Text = Convert.ToString(y1.Capacity);
 
-           /* int x = Convert.ToInt32(tbxEventId.Text);
-            var y = db.Events.Find(x);
-            tbxCapacityControl.Text = Convert.ToString(y.CapacityControl);*/
+   
 
             int x = Convert.ToInt32(tbxEventId.Text);
             var y = db.Customers.Where(p => p.CustomerEvent == x.ToString()).ToList();
             tbxCapacityControl.Text = Convert.ToString(y.Count());
 
-            /*if (y.CapacityControl == null)
-            {
-                y.CapacityControl = 0;
-                tbxCapacityControl.Text = "0";
-            }*/
 
 
             tbxBigEventInformation.Text = tbxEventInformation.Text;
